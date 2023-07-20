@@ -1,0 +1,15 @@
+version: "3.7"
+services:
+  database:
+    image: "mariadb:latest"
+    volumes:
+      - database:/var/lib/mysql
+    environment:
+      - MYSQL_ROOT_PASSWORD=root
+      - MYSQL_DATABASE=16959-reproduction
+      - MYSQL_USER=test
+      - MYSQL_PASSWORD=test
+    ports:
+      - "3306:3306"
+volumes:
+  database:
